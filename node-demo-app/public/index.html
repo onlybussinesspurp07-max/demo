@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Node Demo App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Demo Vercel</title>
 </head>
 <body>
-  <h1>Hello from Node + HTML</h1>
-  <button onclick="alert('Button works!')">Click me</button>
+  <h1>Hello from Vercel!</h1>
+  <p>This is a static HTML page served correctly.</p>
+  <button id="btn">Call API</button>
 
-  <script src="/node-demo-app/index.js"></script>
+  <script>
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', async () => {
+      const res = await fetch('/api/hello');
+      const data = await res.json();
+      alert(JSON.stringify(data));
+    });
+  </script>
 </body>
 </html>

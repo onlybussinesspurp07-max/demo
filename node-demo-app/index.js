@@ -1,14 +1,18 @@
-const express = require("express");
-const app = express();
-const path = require("path");
+// const express = require("express");
+// const path = require("path");
+// const app = express();
 
-// serve static files from "public"
-app.use(express.static(path.join(__dirname, "public")));
+// // serve static files
+// app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+// // send index.html for the root
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
+// // fallback for all other routes
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+// module.exports = app;
